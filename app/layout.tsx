@@ -8,11 +8,17 @@ export const metadata: Metadata = {
   },
   description:
     "Explore free online tools, practical creator utilities and digital products from Ranjeet Digital Studio.",
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL("https://ranjeet-labs.netlify.app"),
   openGraph: {
     title: "Ranjeet Labs",
     description: "Useful tools. Practical technology.",
-    type: "website"
+    type: "website",
+    url: "https://ranjeet-labs.netlify.app"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ranjeet Labs — Useful tools. Practical technology.",
+    description: "Free browser tools for creators, businesses and everyday users."
   }
 };
 

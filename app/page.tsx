@@ -1,8 +1,9 @@
 import Link from "next/link";
+import MobileNav from "./components/mobile-nav";
 import {
   ArrowRight, ArrowUpRight, AudioWaveform, Code2, FileImage,
   Layers3, QrCode, Sparkles, WandSparkles, Zap, ShieldCheck,
-  Globe2, Video, Menu
+  Globe2, Video
 } from "lucide-react";
 
 const tools = [
@@ -53,7 +54,7 @@ export default function Home() {
           <Link href="/#about">About</Link>
         </nav>
         <Link className="header-cta" href="/#tools">Explore tools <ArrowUpRight size={16} /></Link>
-        <button className="mobile-menu" aria-label="Menu"><Menu size={21} /></button>
+        <MobileNav />
       </header>
 
       <section className="hero shell">
@@ -165,7 +166,7 @@ export default function Home() {
       <footer className="site-footer shell">
         <Link href="/" className="brand"><span className="brand-mark">R<span>.</span></span><span className="brand-copy"><strong>RANJEET LABS</strong><small>BY RANJEET DIGITAL STUDIO</small></span></Link>
         <p>Useful tools. Practical technology.</p>
-        <div className="footer-links"><Link href="/#tools">Free tools</Link><Link href="/marketplace">Marketplace</Link><a href="mailto:hello@ranjeetlabs.com">Contact</a></div>
+        <div className="footer-links"><Link href="/#tools">Free tools</Link><Link href="/marketplace">Marketplace</Link><Link href="/contact">Contact</Link><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div>
         <small className="copyright">© {new Date().getFullYear()} Ranjeet Digital Studio. Built with purpose.</small>
       </footer>
     </main>
