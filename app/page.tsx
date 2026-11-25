@@ -159,7 +159,7 @@ export default function Home() {
       <section className="about-section" id="about">
         <div className="shell about-inner">
           <div><div className="eyebrow">A NOTE FROM THE STUDIO</div><h2>Technology should<br /><span>make life easier.</span></h2></div>
-          <div className="about-copy"><p>Ranjeet Digital Studio builds practical digital products for people who want to create, work and grow without unnecessary complexity.</p><p>We believe useful software should be approachable, transparent and thoughtfully made. This platform is our workshop — and we're just getting started.</p><div className="signature">Ranjeet Digital Studio <span>· India</span></div></div>
+          <div className="about-copy"><p>Ranjeet Digital Studio builds practical digital products for people who want to create, work and grow without unnecessary complexity.</p><p>We believe useful software should be approachable, transparent and thoughtfully made. This platform is our workshop — and we&apos;re just getting started.</p><div className="signature">Ranjeet Digital Studio <span>· India</span></div></div>
         </div>
       </section>
 
