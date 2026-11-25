@@ -1,34 +1,11 @@
 import Link from "next/link";
 import MobileNav from "./components/mobile-nav";
+import ToolDiscovery from "./components/tool-discovery";
 import {
   ArrowRight, ArrowUpRight, AudioWaveform, Code2, FileImage,
   Layers3, QrCode, Sparkles, WandSparkles, Zap, ShieldCheck,
   Globe2, Video
 } from "lucide-react";
-
-const tools = [
-  {
-    href: "/tools/qr-generator",
-    icon: QrCode,
-    name: "QR Code Generator",
-    description: "Create downloadable QR codes for links, menus and contact details.",
-    tag: "Free tool"
-  },
-  {
-    href: "/tools/image-compressor",
-    icon: FileImage,
-    name: "Image Compressor",
-    description: "Reduce image file sizes directly in your browser. Your files stay on your device.",
-    tag: "Private by design"
-  },
-  {
-    href: "/tools/reel-script-generator",
-    icon: WandSparkles,
-    name: "Reel Script Generator",
-    description: "Get practical short-video hooks, scene ideas and captions for your business.",
-    tag: "Creator tool"
-  }
-];
 
 export default function Home() {
   return (
@@ -98,24 +75,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section shell" id="tools">
-        <div className="section-heading">
-          <div><div className="eyebrow">THE FREE TOOLBOX</div><h2>Get useful things done.</h2><p>Practical tools that work right in your browser. No complicated setup.</p></div>
-          <span className="section-count">01 / FREE TOOLS</span>
-        </div>
-        <div className="tool-grid">
-          {tools.map((tool, index) => {
-            const Icon = tool.icon;
-            return (
-              <Link className={`tool-card tool-card-${index + 1}`} href={tool.href} key={tool.name}>
-                <div className="tool-card-top"><span className="tool-icon"><Icon size={22} /></span><span className="tool-tag">{tool.tag}</span></div>
-                <h3>{tool.name}</h3><p>{tool.description}</p>
-                <span className="card-link">Open tool <ArrowUpRight size={16} /></span>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
+      <ToolDiscovery />
 
       <section className="feature-band" id="products">
         <div className="shell feature-inner">

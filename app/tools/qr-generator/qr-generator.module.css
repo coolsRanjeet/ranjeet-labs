@@ -1,0 +1,62 @@
+.typeSelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.typeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 11px;
+  border: 1px solid #e1e7f0;
+  border-radius: 9px;
+  background: #fff;
+  color: #526176;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .16s ease, border-color .16s ease, color .16s ease;
+}
+.typeButton:hover { border-color: #aebde9; color: #315ff0; }
+.typeButton:focus-visible { outline: 2px solid #315ff0; outline-offset: 2px; }
+.typeButtonActive { background: #eef3ff; border-color: #315ff0; color: #315ff0; }
+.fieldGroup { display: flex; flex-direction: column; gap: 15px; }
+.field { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.field label { font-size: 11px; font-weight: 800; color: #344258; }
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  background: #fff;
+  color: #25334a;
+  padding: 11px 12px;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.field textarea { resize: vertical; min-height: 86px; }
+.field input:focus,
+.field select:focus,
+.field textarea:focus { outline: 2px solid #315ff0; outline-offset: 1px; border-color: #315ff0; }
+.field input::placeholder,
+.field textarea::placeholder { color: #a1adbd; }
+.fieldRow { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; }
+.phoneRow { display: grid; grid-template-columns: minmax(85px, 110px) minmax(0, 1fr); gap: 12px; }
+.checkboxLabel { display: inline-flex; align-items: center; gap: 8px; width: fit-content; font-size: 11px; font-weight: 700; color: #344258; cursor: pointer; }
+.checkboxLabel input { width: 16px; height: 16px; accent-color: #315ff0; }
+@media (max-width: 520px) {
+  .typeButton { flex: 1 1 calc(50% - 8px); }
+  .fieldRow, .phoneRow { grid-template-columns: 1fr; }
+}
+
+.downloadActions { display: flex; flex-direction: column; gap: 8px; width: 100%; }
+.clipboardStatus { margin: 0; color: #64748b; font-size: 12px; text-align: center; }
+@media (max-width: 520px) {
+  .field input, .field select, .field textarea { font-size: 16px; }
+}

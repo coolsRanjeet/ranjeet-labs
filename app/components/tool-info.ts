@@ -1,0 +1,26 @@
+// Shared tool metadata. Keep this module free of React/client-only imports.
+export type ToolSlug = string;
+export const TOOL_INFO: Record<string, { title: string; description: string; category: string }> = {
+  "image-to-pdf": { title: "Image to PDF", description: "Turn images into a clean PDF. Reorder images, choose paper size, margins and orientation. Files are processed locally.", category: "Image & PDF" },
+  "pdf-to-image": { title: "PDF to Image", description: "Convert PDF pages into JPG or PNG images and download them individually or together.", category: "PDF" },
+  "merge-pdf": { title: "Merge PDF", description: "Combine multiple PDF documents into one file. Choose the order before merging.", category: "PDF" },
+  "split-pdf": { title: "Split / Extract PDF", description: "Extract selected pages or split a PDF into individual page files.", category: "PDF" },
+  "pdf-compressor": { title: "PDF Compressor", description: "Re-save and clean PDF structure locally. For image-heavy PDFs, compression gains may be limited.", category: "PDF" },
+  "pdf-organizer": { title: "PDF Page Organizer", description: "Rotate pages, remove pages, or reorder them by entering a new page sequence.", category: "PDF" },
+  "pdf-watermark": { title: "PDF Watermark & Page Numbers", description: "Add text watermarks or page numbers to PDF documents.", category: "PDF" },
+  "passport-photo": { title: "Passport Photo Maker", description: "Create passport-style photos and printable sheets with common size presets.", category: "Image & Forms" },
+  "photo-signature-resizer": { title: "Photo & Signature Resizer", description: "Resize photos and signatures to exact pixel and KB limits for online forms.", category: "Image & Forms" },
+  "image-converter": { title: "Image Format Converter", description: "Convert images between JPG, PNG and WebP. HEIC input is supported where browser conversion succeeds.", category: "Image" },
+  "image-cropper": { title: "Image Cropper & Resizer", description: "Crop, resize and export images using common aspect ratios or custom dimensions.", category: "Image" },
+  "social-resizer": { title: "Social Media Image Resizer", description: "Resize images for Instagram, Stories, YouTube thumbnails, WhatsApp and LinkedIn.", category: "Creator" },
+  "invoice-generator": { title: "Invoice Generator", description: "Create simple GST or non-GST invoices and download a PDF copy.", category: "Business" },
+  "upi-qr": { title: "UPI QR Code Generator", description: "Generate a UPI payment QR with optional name, amount and note.", category: "Business" },
+  "gst-calculator": { title: "GST Calculator", description: "Calculate GST-inclusive and GST-exclusive prices with common tax rates.", category: "Calculator" },
+  "emi-calculator": { title: "EMI Calculator", description: "Estimate monthly loan payments, total interest and repayment amount.", category: "Calculator" },
+  "percentage-calculator": { title: "Percentage Calculator", description: "Calculate percentages, discounts, increases and differences.", category: "Calculator" },
+  "text-toolkit": { title: "Text Toolkit", description: "Count words and characters, clean text, change case, sort lines and remove duplicates.", category: "Text" },
+  "ocr": { title: "Image to Text (OCR)", description: "Extract selectable text from photos and screenshots in your browser.", category: "Text" },
+  "age-calculator": { title: "Age Calculator", description: "Calculate exact age in years, months and days from a birth date.", category: "Calculator" },
+  "date-calculator": { title: "Date Calculator", description: "Calculate days between dates or add/subtract days from a date.", category: "Calculator" },
+  "password-generator": { title: "Strong Password Generator", description: "Generate random passwords with customizable length and character sets.", category: "Utility" },
+};

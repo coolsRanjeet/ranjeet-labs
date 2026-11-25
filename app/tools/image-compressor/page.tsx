@@ -4,7 +4,7 @@ import ImageCompressor from "./image-compressor";
 
 export const metadata: Metadata = {
   title: "Free Image Compressor",
-  description: "Compress JPG, PNG and WebP images locally in your browser."
+  description: "Compress JPG, PNG, WebP and AVIF images locally in your browser."
 };
 
 export default function Page() {
