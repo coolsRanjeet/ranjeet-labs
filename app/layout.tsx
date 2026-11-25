@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   description:
     "Explore free online tools, practical creator utilities and digital products from Ranjeet Digital Studio.",
   metadataBase: new URL("https://ranjeet-labs.netlify.app"),
+  verification: {
+    google: "emGYYJ3ZA1uChvDAWBFj6GpiCvqkidr_Oc6tBuOWaYE",
+  },
   openGraph: {
     title: "Ranjeet Labs",
     description: "Useful tools. Practical technology.",
