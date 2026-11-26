@@ -12,6 +12,7 @@ export default function MobileNav() {
       {open && <nav className="mobile-nav-panel" aria-label="Mobile navigation">
         <Link href="/#tools" onClick={() => setOpen(false)}>Free tools</Link>
         <Link href="/#products" onClick={() => setOpen(false)}>Products</Link>
+        <Link href="/projects" onClick={() => setOpen(false)}>Projects</Link>
         <Link href="/marketplace" onClick={() => setOpen(false)}>Code marketplace</Link>
         <Link href="/#about" onClick={() => setOpen(false)}>About</Link>
         <Link href="/contact" onClick={() => setOpen(false)}>Contact</Link>

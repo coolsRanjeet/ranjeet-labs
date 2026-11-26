@@ -2,14 +2,14 @@ import Link from "next/link";
 import MobileNav from "./components/mobile-nav";
 import ToolDiscovery from "./components/tool-discovery";
 import {
-  ArrowRight, ArrowUpRight, AudioWaveform, Code2, FileImage,
+  ArrowRight, ArrowUpRight, ArrowUp, AudioWaveform, Code2, FileImage,
   Layers3, QrCode, Sparkles, WandSparkles, Zap, ShieldCheck,
   Globe2, Video
 } from "lucide-react";
 
 export default function Home() {
   return (
-    <main>
+    <main id="home-top">
       <div className="announcement">
         <span className="announcement-dot" />
         A growing collection of useful, free digital tools
@@ -27,10 +27,12 @@ export default function Home() {
         <nav className="desktop-nav" aria-label="Main navigation">
           <Link href="/#tools">Free tools</Link>
           <Link href="/#products">Products</Link>
+          <Link href="/projects">Projects</Link>
           <Link href="/marketplace">Code marketplace</Link>
           <Link href="/#about">About</Link>
+          <Link href="/contact">Contact</Link>
         </nav>
-        <Link className="header-cta" href="/#tools">Explore tools <ArrowUpRight size={16} /></Link>
+        <Link className="header-cta" href="/contact">Start a Project <ArrowUpRight size={16} /></Link>
         <MobileNav />
       </header>
 
@@ -123,12 +125,56 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="project-cta">
+        <div className="shell project-cta-inner">
+          <div className="project-cta-copy">
+            <span className="project-cta-eyebrow">HAVE A PROJECT IN MIND?</span>
+            <h2>
+              Have an idea?
+              <br />
+              <span>Let&apos;s build it.</span>
+            </h2>
+            <p>
+              From websites and custom software to AI assistants and automation,
+              we can help turn your idea into a working product.
+            </p>
+          </div>
+          <Link href="/contact" className="project-cta-button">
+            Start a Project <ArrowRight size={18} />
+          </Link>
+        </div>
+      </section>
+
       <footer className="site-footer shell">
         <Link href="/" className="brand"><span className="brand-mark">R<span>.</span></span><span className="brand-copy"><strong>RANJEET LABS</strong><small>BY RANJEET DIGITAL STUDIO</small></span></Link>
         <p>Useful tools. Practical technology.</p>
         <div className="footer-links"><Link href="/#tools">Free tools</Link><Link href="/marketplace">Marketplace</Link><Link href="/contact">Contact</Link><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link></div>
         <small className="copyright">© {new Date().getFullYear()} Ranjeet Digital Studio. Built with purpose.</small>
       </footer>
+      <a
+        href="#home-top"
+        aria-label="Go to top"
+        title="Go to top"
+        style={{
+          position: "fixed",
+          right: "24px",
+          bottom: "24px",
+          zIndex: 9999,
+          width: "48px",
+          height: "48px",
+          borderRadius: "50%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "#315efb",
+          color: "#ffffff",
+          boxShadow: "0 8px 24px rgba(49, 94, 251, 0.28)",
+          textDecoration: "none",
+          border: "1px solid rgba(255,255,255,0.25)"
+        }}
+      >
+        <ArrowUp size={21} />
+      </a>
     </main>
   );
 }

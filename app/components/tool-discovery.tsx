@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
+import styles from "./tool-discovery.module.css";
 import {
   ArrowUpRight, Search, QrCode, FileImage, WandSparkles, FileText, Images,
   Scissors, Layers3, Stamp, UserRound, Image, Crop, Instagram, Receipt,
@@ -52,20 +53,20 @@ export default function ToolDiscovery() {
   const showPopular = category === "All tools" && !query.trim();
 
   return (
-    <section className="section shell tool-discovery" id="tools">
-      <div className="section-heading discovery-heading">
-        <div><div className="eyebrow">THE FREE TOOLBOX</div><h2>Get useful things done.</h2><p>Find the right tool, finish the task and get on with your day.</p></div>
-        <span className="section-count">{tools.length} FREE TOOLS</span>
+    <section className={styles.root} id="tools">
+      <div className={styles.heading}>
+        <div><div className={styles.eyebrow}>THE FREE TOOLBOX</div><h2>Get useful things done.</h2><p>Find the right tool, finish the task and get on with your day.</p></div>
+        <span className={styles.sectionCount}>{tools.length} FREE TOOLS</span>
       </div>
-      <div className="discovery-controls">
-        <label className="tool-search"><Search size={18}/><input value={query} onChange={e => setQuery(e.target.value)} placeholder="Search tools, tasks or categories…" aria-label="Search free tools"/>{query && <button type="button" onClick={() => setQuery("")} aria-label="Clear search"><X size={16}/></button>}</label>
-        <div className="category-filters" role="group" aria-label="Filter tools by category">
-          {categories.map(item => <button key={item} type="button" className={category === item ? "filter-pill active" : "filter-pill"} onClick={() => setCategory(item)}>{item}</button>)}
+      <div className={styles.controls}>
+        <label className={styles.search}><Search size={18}/><input value={query} onChange={e => setQuery(e.target.value)} placeholder="Search tools, tasks or categories…" aria-label="Search free tools"/>{query && <button type="button" onClick={() => setQuery("")} aria-label="Clear search"><X size={16}/></button>}</label>
+        <div className={styles.filters} role="group" aria-label="Filter tools by category">
+          {categories.map(item => <button key={item} type="button" className={category === item ? `${styles.filterPill} ${styles.active}` : styles.filterPill} onClick={() => setCategory(item)}>{item}</button>)}
         </div>
       </div>
-      {showPopular && <div className="popular-block"><div className="subsection-heading"><div><span className="popular-kicker"><Sparkles size={13}/> START HERE</span><h3>Popular tools</h3></div><span>Quick picks for everyday tasks</span></div><div className="popular-grid">{popular.map(tool => {const Icon=tool.icon;return <Link href={tool.href} className="popular-card" key={tool.href}><span className={`popular-icon cat-${tool.category.toLowerCase()}`}><Icon size={21}/></span><div><strong>{tool.name}</strong><small>{tool.description}</small></div><ArrowUpRight className="popular-arrow" size={17}/></Link>})}</div></div>}
-      <div className="results-heading"><strong>{query || category !== "All tools" ? `${filtered.length} ${filtered.length === 1 ? "tool" : "tools"} found` : "Explore all tools"}</strong><span>{category === "All tools" ? "Browse the complete collection" : `${category} tools`}</span></div>
-      {filtered.length ? <div className="discovery-grid">{filtered.map(tool => {const Icon=tool.icon;return <Link href={tool.href} className="discovery-card" key={tool.href}><div className="discovery-card-top"><span className={`discovery-icon cat-${tool.category.toLowerCase()}`}><Icon size={21}/></span><span className="discovery-category">{tool.category}</span></div><h3>{tool.name}</h3><p>{tool.description}</p><span className="discovery-link">Open tool <ArrowUpRight size={16}/></span></Link>})}</div> : <div className="tools-empty"><Search size={24}/><strong>No tools found</strong><p>Try another search or select a different category.</p><button type="button" onClick={() => {setQuery("");setCategory("All tools")}}>Clear filters</button></div>}
+      {showPopular && <div className={styles.popularBlock}><div className={styles.subsectionHeading}><div><span className={styles.popularKicker}><Sparkles size={13}/> START HERE</span><h3>Popular tools</h3></div><span>Quick picks for everyday tasks</span></div><div className={styles.popularGrid}>{popular.map(tool => {const Icon=tool.icon;return <Link href={tool.href} className={styles.popularCard} key={tool.href}><span className={`${styles.popularIcon} cat-${tool.category.toLowerCase()}`}><Icon size={21}/></span><div><strong>{tool.name}</strong><small>{tool.description}</small></div><ArrowUpRight className={styles.popularArrow} size={17}/></Link>})}</div></div>}
+      <div className={styles.resultsHeading}><strong>{query || category !== "All tools" ? `${filtered.length} ${filtered.length === 1 ? "tool" : "tools"} found` : "Explore all tools"}</strong><span>{category === "All tools" ? "Browse the complete collection" : `${category} tools`}</span></div>
+      {filtered.length ? <div className={styles.grid}>{filtered.map(tool => {const Icon=tool.icon;return <Link href={tool.href} className={styles.card} key={tool.href}><div className={styles.cardTop}><span className={`${styles.icon} cat-${tool.category.toLowerCase()}`}><Icon size={21}/></span><span className={styles.category}>{tool.category}</span></div><h3>{tool.name}</h3><p>{tool.description}</p><span className={styles.openLink}>Open tool <ArrowUpRight size={16}/></span></Link>})}</div> : <div className={styles.empty}><Search size={24}/><strong>No tools found</strong><p>Try another search or select a different category.</p><button type="button" onClick={() => {setQuery("");setCategory("All tools");}}>Clear filters</button></div>}
     </section>
   );
 }
